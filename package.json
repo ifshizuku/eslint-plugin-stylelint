@@ -1,0 +1,55 @@
+{
+  "name": "eslint-plugin-stylelint",
+  "version": "0.1.0",
+  "packageManager": "pnpm@8.15.3",
+  "description": "Stylelint integration for ESLint",
+  "author": "Kawasaki Shizuku (ifshizuku@gmail.com)",
+  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "stylelint",
+    "eslint-plugin"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsu --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "dep": "taze",
+    "dep:write": "taze -w",
+    "prepare": "simple-git-hooks"
+  },
+  "peerDependencies": {
+    "eslint": "^8.40.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.4",
+    "@types/node": "^20.11.19",
+    "eslint": "npm:eslint-ts-patch@8.56.0-0",
+    "eslint-ts-patch": "8.56.0-0",
+    "lint-staged": "^15.2.2",
+    "simple-git-hooks": "^2.9.0",
+    "taze": "^0.13.3",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}

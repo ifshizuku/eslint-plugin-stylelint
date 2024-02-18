@@ -1,7 +1,7 @@
 import { createSyncFn } from 'synckit'
 import type { Rule } from 'eslint'
 import type { LintResult, LinterOptions, LinterResult } from 'stylelint'
-import { workerPath } from './utils/getPath'
+import { workerPath } from './path'
 import { report } from './utils/report'
 
 type LinterWorker = (payload: LinterOptions) => Pick<LinterResult, 'report' | 'code'>

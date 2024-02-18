@@ -6,6 +6,7 @@ export default defineBuildConfig([
     entries: [
       'src/index',
     ],
+    outDir: 'dist',
     declaration: true,
     clean: true,
     rollup: {
@@ -17,6 +18,7 @@ export default defineBuildConfig([
     entries: [
       'src/worker',
     ],
+    outDir: 'worker',
     clean: true,
     rollup: {
       esbuild: {
